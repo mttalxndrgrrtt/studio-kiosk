@@ -7,10 +7,11 @@
 <body>
 <h1>Band Status</h1>
 <table>
+<div style="float:left;">
 {% for timeline in timelines %}
     <tr><td><img src="{{ timeline[0]['user']['profile_image_url'] }}" /></td>
         <td>{{ timeline[0]['text'] }}
-            <div style="color: #999">
+            <div style="color: #999; font-size:0.8em">
             {{ time.strftime('%A %H:%M:%S', time.strptime(timeline[0]['created_at'],'%a %b %d %H:%M:%S +0000 %Y')) }}
             {% if timeline[0]['place'] %}
             from {{ timeline[0]['place']['full_name'] }}
@@ -19,8 +20,11 @@
         </td>
     </tr>
 {% endfor %}
+</div>
 </table>
-
+<div style="float:right;">
+<script type="text/javascript" src="http://voap.weather.com/weather/oap/14623?template=DRIVV&par=3000000007&unit=0&key=twciweatherwidget"></script>
+</div>
 <h1>Groupie Status</h1>
 
 <p>Our groupies were last fed at {{ cats_last_fed }}. That was

@@ -11,4 +11,7 @@ body {
 
 table {
     border-spacing: 10px;
+    width:70%;
+    font-size:1.1em;
+    
 }
